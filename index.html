@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="theme-color" content="#0a0f0a">
+<title>Fahm — فَهْم</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0f0a;--bg2:#111a11;--bg3:#1a2a1a;--gold:#c9a84c;--gd:rgba(201,168,76,.15);--gl:#3dba7e;--t:#e8e4d9;--t2:#a8a28a;--t3:#6a6a5a;--af:'Noto Naskh Arabic','Amiri',serif;--bf:'Cormorant Garamond',Georgia,serif}
+*{margin:0;padding:0;box-sizing:border-box}html,body{height:100%;background:var(--bg);color:var(--t);font-family:var(--bf);overflow:hidden;-webkit-tap-highlight-color:transparent}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.03;background-image:radial-gradient(circle at 25% 25%,var(--gold) 1px,transparent 1px),radial-gradient(circle at 75% 75%,var(--gold) 1px,transparent 1px);background-size:60px 60px}
+#sp{position:fixed;inset:0;z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--bg);transition:opacity .8s}
+#sp.h{opacity:0;pointer-events:none}#sp h1{font-family:var(--af);font-size:4rem;color:var(--gold);text-shadow:0 0 40px rgba(201,168,76,.3);animation:br 3s ease-in-out infinite}
+#sp .s{font-size:1.1rem;color:var(--t2);margin-top:8px;letter-spacing:3px;text-transform:uppercase}
+#sp .b{width:240px;height:3px;background:var(--bg3);border-radius:2px;margin-top:40px;overflow:hidden}
+#sp .f{height:100%;background:var(--gold);width:0%;transition:width .5s}
+#sp .lt{font-size:.8rem;color:var(--t3);margin-top:12px;text-align:center;max-width:300px}
+@keyframes br{0%,100%{transform:scale(1)}50%{transform:scale(1.02);opacity:.85}}
+#ap{position:relative;z-index:1;height:100vh;display:flex;flex-direction:column;opacity:0;transition:opacity .5s}#ap.v{opacity:1}
+.hd{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;border-bottom:1px solid rgba(201,168,76,.1)}
+.hd .lo{font-family:var(--af);font-size:1.4rem;color:var(--gold)}.hd .ml{font-size:.7rem;color:var(--t3);letter-spacing:2px;text-transform:uppercase}
+.hd .sb{width:34px;height:34px;border:1px solid var(--bg3);border-radius:50%;background:0;color:var(--t2);font-size:.9rem;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.st{display:flex;align-items:center;gap:8px;padding:8px 20px;background:var(--bg2);font-size:.75rem;color:var(--t3);border-bottom:1px solid rgba(201,168,76,.05)}
+.dot{width:8px;height:8px;border-radius:50%;transition:background .3s}
+.dot.i{background:var(--t3)}.dot.l{background:var(--gl);animation:pu 1.5s infinite}.dot.p{background:var(--gold);animation:pu .8s infinite}.dot.e{background:#e74c3c}
+@keyframes pu{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
+.sn{margin-left:auto;font-family:var(--af);color:var(--gold);font-size:.85rem}
+.ms{display:flex;gap:2px;padding:4px;background:var(--bg2);border-radius:12px;margin:0 20px}
+.mb{flex:1;padding:7px 0;border:0;background:0;color:var(--t3);font-size:.7rem;border-radius:10px;cursor:pointer;font-family:var(--bf);transition:all .3s}
+.mb.a{background:var(--gd);color:var(--gold);font-weight:600}
+.tb{padding:0 20px;font-family:var(--af);font-size:.85rem;color:var(--t3);direction:rtl;text-align:right;max-height:0;overflow:hidden;transition:all .3s}
+.tb.v{max-height:50px;padding:8px 20px}
+.vc{flex:1;overflow-y:auto;padding:20px;scroll-behavior:smooth;-webkit-overflow-scrolling:touch}.vc::-webkit-scrollbar{display:none}
+.em{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;text-align:center;gap:16px}
+.em .ic{font-size:3.5rem;opacity:.5;animation:fl 4s ease-in-out infinite}.em p{color:var(--t3);font-size:.95rem;max-width:280px;line-height:1.6}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.vc .cd{margin-bottom:20px;padding:18px;background:var(--bg2);border-radius:14px;border-left:3px solid var(--gold);animation:si .4s ease-out}
+@keyframes si{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.cd .rf{font-size:.65rem;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
+.cd .ar{font-family:var(--af);font-size:1.5rem;line-height:2.2;color:var(--t);direction:rtl;text-align:right;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid rgba(201,168,76,.1)}
+.cd .fr{font-family:var(--bf);font-size:1.1rem;line-height:1.8;color:var(--t2);font-style:italic}
+.ct{padding:16px 20px;display:flex;flex-direction:column;align-items:center;gap:10px;border-top:1px solid rgba(201,168,76,.1);background:var(--bg)}
+.mc{width:68px;height:68px;border-radius:50%;border:2px solid var(--gold);background:0;color:var(--gold);font-size:1.6rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;position:relative}
+.mc:active{transform:scale(.95)}.mc.on{background:var(--gold);color:var(--bg);box-shadow:0 0 30px rgba(201,168,76,.4)}
+.mc.on::after{content:'';position:absolute;inset:-8px;border-radius:50%;border:2px solid var(--gold);opacity:0;animation:rp 2s infinite}
+@keyframes rp{0%{transform:scale(1);opacity:.4}100%{transform:scale(1.4);opacity:0}}
+.ci{font-size:.7rem;color:var(--t3)}
+.ov{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.7);backdrop-filter:blur(8px);opacity:0;pointer-events:none;transition:opacity .3s}
+.ov.v{opacity:1;pointer-events:all}
+.pn{position:fixed;bottom:0;left:0;right:0;z-index:51;background:var(--bg2);border-radius:20px 20px 0 0;padding:24px 20px 40px;max-height:75vh;overflow-y:auto;transform:translateY(100%);transition:transform .4s}
+.ov.v .pn{transform:translateY(0)}
+.pn h3{font-family:var(--af);color:var(--gold);font-size:1.2rem;margin-bottom:20px;text-align:center}
+.rw{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.rw label{color:var(--t2);font-size:.85rem}.rw select{background:var(--bg3);color:var(--t);border:1px solid rgba(201,168,76,.2);border-radius:8px;padding:6px 10px;font-size:.8rem}
+.rw .vl{color:var(--gold);font-size:.8rem}
+.cb{margin-top:16px;width:100%;padding:12px;border:1px solid var(--gold);background:0;color:var(--gold);border-radius:12px;font-size:.9rem;cursor:pointer}
+.rb{margin-top:8px;width:100%;padding:10px;border:1px solid #e74c3c44;background:0;color:#e74c3c;border-radius:12px;font-size:.8rem;cursor:pointer}
+.aw{position:fixed;top:6px;right:8px;z-index:10;font-size:.55rem;color:var(--t3);opacity:.4}
+@media(min-width:600px){.vc{padding:30px 60px}.cd .ar{font-size:1.9rem}.cd .fr{font-size:1.25rem}}
+</style></head><body>
+<div id="sp"><h1>فَهْم</h1><div class="s">Fahm</div><div class="b"><div class="f" id="lf"></div></div><div class="lt" id="lt">Initialisation...</div></div>
+<div id="ap"><div class="aw" id="aw"></div>
+<div class="hd"><div class="lo">فَهْم</div><div class="ml" id="ml">MODE SALAT</div><button class="sb" onclick="TG()">⚙</button></div>
+<div class="st"><div class="dot i" id="dt"></div><span id="sx">Chargement...</span><span class="sn" id="sn"></span></div>
+<div class="ms"><button class="mb a" onclick="SM('salat')">🕌 Salat</button><button class="mb" onclick="SM('taraweeh')">🌙 Taraweeh</button><button class="mb" onclick="SM('revision')">📖 Révision</button></div>
+<div class="tb" id="tb"></div>
+<div class="vc" id="vc"><div class="em" id="es"><div class="ic">🕌</div><p id="ep">Appuie sur le micro pour commencer à écouter l'imam</p><p style="font-size:.75rem;color:var(--t3)">114 sourates • 6236 versets</p></div></div>
+<div class="ct"><button class="mc" id="mc" onclick="TL()"><span id="mi">🎤</span></button><div class="ci" id="ci">Appuyer pour écouter</div></div></div>
+<div class="ov" id="ov" onclick="TG()"><div class="pn" onclick="event.stopPropagation()">
+<h3>⚙ Paramètres</h3>
+<div class="rw"><label>Taille texte</label><select onchange="FS(this.value)"><option value="n">Normal</option><option value="l">Grand</option><option value="xl">Très grand</option></select></div>
+<div class="rw"><label>Écran allumé</label><select onchange="WS(this.value)"><option value="1">Oui</option><option value="0">Non</option></select></div>
+<div class="rw"><label>Base Coran</label><span class="vl" id="db">—</span></div>
+<button class="cb" onclick="TG()">Fermer</button><button class="rb" onclick="RD()">🔄 Re-télécharger</button>
+</div></div>
+<script>
+// State
+const Z={m:'salat',on:false,fs:'n',rc:null,wl:null,hi:[],ix:[],ok:false,ar:{},fr:{}};let LK=null;
+
+// IndexedDB
+const OD=()=>new Promise((r,j)=>{const q=indexedDB.open('FQ',2);q.onupgradeneeded=e=>{const d=e.target.result;if(!d.objectStoreNames.contains('q'))d.createObjectStore('q')};q.onsuccess=e=>r(e.target.result);q.onerror=e=>j(e)});
+const GD=async k=>{const d=await OD();return new Promise(r=>{const t=d.transaction('q','readonly'),q=t.objectStore('q').get(k);q.onsuccess=()=>r(q.result||null);q.onerror=()=>r(null)})};
+const SD=async(k,v)=>{const d=await OD();return new Promise(r=>{const t=d.transaction('q','readwrite');t.objectStore('q').put(v,k);t.oncomplete=()=>r()})};
+const CD=async()=>{const d=await OD();return new Promise(r=>{const t=d.transaction('q','readwrite');t.objectStore('q').clear();t.oncomplete=()=>r()})};
+
+// Load Quran (API + cache)
+async function LQ(P){
+  const ca=await GD('a'),cf=await GD('f');
+  if(ca&&cf){P(50,'Cache trouvé...');Z.ar=ca;Z.fr=cf;P(80,'Construction index...');BI();P(100,Z.ix.length+' versets — بسم الله');return}
+  P(10,'Téléchargement Coran arabe...');
+  try{
+    const r1=await fetch('https://api.alquran.cloud/v1/quran/quran-uthmani'),d1=await r1.json();
+    P(35,'Téléchargement traduction française...');
+    const r2=await fetch('https://api.alquran.cloud/v1/quran/fr.hamidullah'),d2=await r2.json();
+    P(60,'Traitement...');
+    for(const s of d1.data.surahs)Z.ar[s.number]={n:s.name,e:s.englishName,v:s.ayahs.map(a=>({i:a.numberInSurah,t:a.text}))};
+    for(const s of d2.data.surahs)Z.fr[s.number]={n:s.englishName,d:s.englishNameTranslation||'',v:s.ayahs.map(a=>({i:a.numberInSurah,t:a.text}))};
+    P(75,'Sauvegarde offline...');await SD('a',Z.ar);await SD('f',Z.fr);
+    P(85,'Index...');BI();P(100,Z.ix.length+' versets — بسم الله');
+  }catch(e){P(0,'❌ Connecte-toi à internet et recharge');throw e}
+}
+
+// Normalize
+const NA=t=>t.replace(/[\u0610-\u061A\u064B-\u065F\u0670\u06D6-\u06DC\u06DF-\u06E4\u06E7-\u06E8\u06EA-\u06ED]/g,'').replace(/\u0671/g,'\u0627').replace(/[\u0622\u0623\u0625]/g,'\u0627').replace(/\u0629/g,'\u0647').replace(/\s+/g,' ').trim();
+
+// Build index
+function BI(){
+  Z.ix=[];
+  for(const[k,s]of Object.entries(Z.ar)){const n=+k,f=Z.fr[n];if(!f)continue;
+    for(let i=0;i<s.v.length;i++){const a=s.v[i],fv=f.v[i];if(!fv)continue;
+      Z.ix.push({s:n,na:s.n,ne:f.n,nd:f.d,v:a.i,at:a.t,ft:fv.t,nm:NA(a.t)})}}
+  Z.ok=true;const e=document.getElementById('db');if(e)e.textContent='114 sourates • '+Z.ix.length;
+}
+
+// Match
+const TR=s=>{const r=new Set();for(let i=0;i<=s.length-3;i++)r.add(s.substring(i,i+3));return r};
+const SI=(a,b)=>{if(!a||!b||a.length<3||b.length<3)return 0;const x=TR(a),y=TR(b);let n=0;for(const g of x)if(y.has(g))n++;const u=x.size+y.size-n;return u?n/u:0};
+
+function FM(sp){
+  const n=NA(sp);if(n.length<4)return null;let bs=0,bm=null;
+  for(const e of Z.ix){
+    let sc=SI(n,e.nm);
+    if(n.length>6){if(e.nm.includes(n))sc=Math.max(sc,.92);else if(n.includes(e.nm))sc=Math.max(sc,.88)}
+    if(n.length>10&&e.nm.length>20){const sub=e.nm.substring(0,Math.min(n.length+5,e.nm.length));sc=Math.max(sc,SI(n,sub)*.95)}
+    if(sc>bs&&sc>.28){bs=sc;bm={...e,sc}}}
+  return bm;
+}
+
+// Speech
+function IR(){
+  const C=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(!C){SS('e','Utilise Chrome ou Safari');return null}
+  const r=new C();r.lang='ar-SA';r.continuous=true;r.interimResults=true;r.maxAlternatives=3;
+  r.onresult=e=>{for(let i=e.resultIndex;i<e.results.length;i++){
+    const t=e.results[i][0].transcript.trim();if(t.length<3)continue;
+    ST(t);SS('p','Recherche...');const m=FM(t);
+    if(m&&m.sc>.3){DV(m);SS('l','En écoute...')}
+    if(e.results[i].isFinal){const m2=FM(t);if(m2&&m2.sc>.25)DV(m2);SS('l','En écoute...');HT()}}};
+  r.onerror=e=>{if(e.error==='no-speech')SS('l','En attente...');else if(e.error==='not-allowed'){SS('e','Micro refusé');SL()}};
+  r.onend=()=>{if(Z.on)try{r.start()}catch(e){}};
+  return r;
+}
+
+// Display verse
+function DV(m){
+  const k=m.s+':'+m.v;if(LK===k)return;LK=k;
+  document.getElementById('es').style.display='none';
+  document.getElementById('sn').textContent=m.na;
+  const c=document.createElement('div');c.className='cd';
+  c.innerHTML='<div class="rf">'+m.ne+' ('+m.nd+') — Verset '+m.v+'</div><div class="ar">'+m.at+'</div><div class="fr">'+m.ft+'</div>';
+  AF(c);const vc=document.getElementById('vc');
+  if(Z.m==='salat'){vc.appendChild(c);const cs=vc.querySelectorAll('.cd');if(cs.length>3){cs[0].style.opacity='0';setTimeout(()=>cs[0].remove(),300)}}
+  else vc.appendChild(c);
+  Z.hi.push(m);requestAnimationFrame(()=>{vc.scrollTop=vc.scrollHeight});
+}
+function AF(c){const a=c.querySelector('.ar'),f=c.querySelector('.fr');if(!a)return;if(Z.fs==='l'){a.style.fontSize='2rem';if(f)f.style.fontSize='1.35rem'}else if(Z.fs==='xl'){a.style.fontSize='2.5rem';if(f)f.style.fontSize='1.6rem'}}
+function ST(t){const b=document.getElementById('tb');b.textContent=t;b.classList.add('v')}
+function HT(){setTimeout(()=>document.getElementById('tb').classList.remove('v'),1500)}
+
+// Listen
+function TL(){Z.on?SL():AL()}
+async function AL(){
+  if(!Z.ok){SS('e','Base pas chargée');return}
+  try{await navigator.mediaDevices.getUserMedia({audio:true})}catch(e){SS('e','Micro refusé');return}
+  Z.rc=IR();if(!Z.rc)return;try{Z.rc.start()}catch(e){return}
+  Z.on=true;document.getElementById('mc').classList.add('on');document.getElementById('mi').textContent='⏸';
+  document.getElementById('ci').textContent='Écoute en cours...';SS('l','En écoute...');RW();
+}
+function SL(){
+  if(Z.rc)try{Z.rc.stop()}catch(e){}Z.rc=null;Z.on=false;
+  document.getElementById('mc').classList.remove('on');document.getElementById('mi').textContent='🎤';
+  document.getElementById('ci').textContent='Appuyer pour écouter';SS('i','Prêt');RL();HT();
+}
+
+// Status
+function SS(t,m){document.getElementById('dt').className='dot '+(t==='l'?'l':t==='p'?'p':t==='e'?'e':'i');document.getElementById('sx').textContent=m}
+
+// Mode
+function SM(m){
+  Z.m=m;document.querySelectorAll('.mb').forEach((b,i)=>b.classList.toggle('a',(m==='salat'&&i===0)||(m==='taraweeh'&&i===1)||(m==='revision'&&i===2)));
+  document.getElementById('ml').textContent=m==='salat'?'MODE SALAT':m==='taraweeh'?'MODE TARAWEEH':'MODE RÉVISION';
+  document.getElementById('vc').querySelectorAll('.cd').forEach(c=>c.remove());LK=null;
+  if(m==='revision'){if(Z.on)SL();if(!Z.hi.length){document.getElementById('es').style.display='flex';document.getElementById('ep').textContent='Aucun verset. Lance Salat ou Taraweeh.'}
+  else{document.getElementById('es').style.display='none';Z.hi.forEach(x=>{const c=document.createElement('div');c.className='cd';c.innerHTML='<div class="rf">'+x.ne+' ('+x.nd+') — Verset '+x.v+'</div><div class="ar">'+x.at+'</div><div class="fr">'+x.ft+'</div>';AF(c);document.getElementById('vc').appendChild(c)})}}
+  else{document.getElementById('es').style.display='flex';document.getElementById('ep').textContent='Appuie sur le micro pour écouter l\'imam'}
+}
+
+// Settings
+function TG(){document.getElementById('ov').classList.toggle('v')}
+function FS(v){Z.fs=v;document.querySelectorAll('.cd').forEach(AF)}
+function WS(v){if(v==='0')RL();else if(Z.on)RW()}
+async function RD(){await CD();location.reload()}
+
+// Wake lock
+async function RW(){try{if('wakeLock'in navigator){Z.wl=await navigator.wakeLock.request('screen');document.getElementById('aw').textContent='☀ Écran maintenu'}}catch(e){}}
+function RL(){if(Z.wl){Z.wl.release();Z.wl=null;document.getElementById('aw').textContent=''}}
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'&&Z.on)RW()});
+
+// Init
+async function init(){
+  const f=document.getElementById('lf'),t=document.getElementById('lt');
+  try{await LQ((p,m)=>{f.style.width=p+'%';t.textContent=m})}catch(e){return}
+  setTimeout(()=>{document.getElementById('sp').classList.add('h');document.getElementById('ap').classList.add('v');SS('i','Prêt — '+Z.ix.length+' versets')},800);
+}
+document.addEventListener('DOMContentLoaded',init);
+</script></body></html>
