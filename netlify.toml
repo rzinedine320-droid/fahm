@@ -1,6 +1,5 @@
 [build]
-  publish = "."
-
+  publish = "public"
 [[headers]]
   for = "/*"
   [headers.values]
